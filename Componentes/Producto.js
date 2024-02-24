@@ -1,0 +1,197 @@
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import { Picker } from "@react-native-picker/picker";
+
+const Producto = () => {
+  const [selectedCategory, setSelectedCategory] = useState();
+
+  // Placeholder para la función de navegación
+  const navigateTo = (screen) => {
+    // Aquí iría la lógica de navegación
+    console.log(`Navigating to ${screen}`);
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Planeta Mascotas</Text>
+      </View>
+      <View style={styles.navBar}>
+        <TouchableOpacity onPress={() => navigateTo("Inicio")}>
+          <Text style={styles.navText}>Inicio</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateTo("Productos")}>
+          <Text style={styles.navText}>Productos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateTo("IniciarSesion")}>
+          <Text style={styles.navText}>Iniciar sesión</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateTo("Registrarse")}>
+          <Text style={styles.navText}>Registrarse</Text>
+        </TouchableOpacity>
+      </View>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.mobileScreen}>
+          <View style={styles.todo}>
+            <Text style={styles.categoryTitle}>Categorías</Text>
+            <Picker
+              selectedValue={selectedCategory}
+              onValueChange={(itemValue, itemIndex) =>
+                setSelectedCategory(itemValue)
+              }
+              style={styles.picker}
+            >
+              {/* Añadir más opciones de Picker.Item aquí */}
+              <Picker.Item label="Selecciona la categoría" value="none" />
+              {/* Simulación de categorías */}
+              <Picker.Item label="Categoría 1" value="cat1" />
+              <Picker.Item label="Categoría 2" value="cat2" />
+            </Picker>
+
+            <TouchableOpacity
+              style={styles.irButton}
+              onPress={() =>
+                console.log("Ir a la categoría:", selectedCategory)
+              }
+            >
+              <Text style={styles.irButtonText}>Ir</Text>
+            </TouchableOpacity>
+
+            <Image
+              source={require("../assets/OIP.jpg")}
+              style={styles.petImage}
+            />
+
+            <TouchableOpacity style={styles.facebookButton}>
+              {/* Aquí iría la lógica para conectar con Facebook */}
+              <Text style={styles.facebookButtonText}>f</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>
+              &copy; Sitio desarrollado por PM-Planeta-Mascotas 2023
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "rgba(5, 7, 12, 0.75)",
+  },
+  scrollView: {
+    backgroundColor: "transparent", // Asegúrate de que ScrollView no tenga su propio fondo
+  },
+  mobileScreen: {
+    marginHorizontal: 2,
+    backgroundColor: "white",
+    borderRadius: 10,
+    overflow: "hidden",
+  },
+  header: {
+    backgroundColor: "#c56d16e0",
+    alignItems: "center",
+    height: 100,
+  },
+  headerText: {
+    color: "#fff",
+    fontSize: 22,
+    padding: 30,
+    borderColor: "#fff",
+  },
+  navBar: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "rgb(37, 40, 37)",
+    paddingVertical: 20,
+  },
+  navText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+
+  boxText: {
+    fontSize: 14,
+  },
+  footer: {
+    backgroundColor: "#4a4646",
+    padding: 10,
+    alignItems: "center",
+  },
+  footerText: {
+    color: "#fff",
+  },
+  image: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
+  },
+  // ... otros estilos que ya tienes definidos ...
+  categoryTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 40,
+  },
+  picker: {
+    height: 50,
+    width: "80%",
+    marginLeft: 40,
+    marginTop: 10,
+    marginBottom: 10,
+    // Estilos adicionales si son necesarios
+  },
+  irButton: {
+    backgroundColor: "#ffa500",
+    borderRadius: 5,
+    padding: 10,
+    alignItems: "center",
+    marginVertical: 10,
+    width: 200,
+    marginLeft: 60,
+  },
+  irButtonText: {
+    color: "white",
+    fontSize: 16,
+  },
+  petImage: {
+    width: "90%",
+    height: 200, // Ajusta esto según tus necesidades
+    resizeMode: "contain",
+    marginTop: 20,
+    marginLeft: 20,
+  },
+  facebookButton: {
+    backgroundColor: "#4267B2", // Color de Facebook
+    borderRadius: 50,
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  facebookButtonText: {
+    color: "white",
+    fontSize: 24,
+  },
+  todo: {
+    padding: 20,
+    height: 580,
+  },
+  // ... footer y otros estilos que necesites ...
+});
+
+export default Producto;
