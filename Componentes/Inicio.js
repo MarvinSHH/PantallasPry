@@ -50,7 +50,7 @@ const Inicio = () => {
           </View>
           <View style={styles.footer}>
             <Text style={styles.footerText}>
-              &copy; Sitio desarrollado por PM-Planeta-Mascotas 2023
+              &copy; Sitio desarrollado por PM-Planeta-Mascotas 2024
             </Text>
           </View>
         </View>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(5, 7, 12, 0.75)",
   },
   scrollView: {
-    backgroundColor: "transparent", // Asegúrate de que ScrollView no tenga su propio fondo
+    backgroundColor: "transparent",
   },
   mobileScreen: {
     marginHorizontal: 2,

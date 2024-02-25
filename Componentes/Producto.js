@@ -48,7 +48,7 @@ const Producto = () => {
               }
               style={styles.picker}
             >
-              {/* Añadir más opciones de Picker.Item aquí */}
+              {/* Aqui podrwmos añadir  más opciones de Picker.Item*/}
               <Picker.Item label="Selecciona la categoría" value="none" />
               {/* Simulación de categorías */}
               <Picker.Item label="Categoría 1" value="cat1" />
@@ -70,13 +70,13 @@ const Producto = () => {
             />
 
             <TouchableOpacity style={styles.facebookButton}>
-              {/* Aquí iría la lógica para conectar con Facebook */}
+              {/* Aquí irá la pronta lógica para conectar con Facebook */}
               <Text style={styles.facebookButtonText}>f</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.footer}>
             <Text style={styles.footerText}>
-              &copy; Sitio desarrollado por PM-Planeta-Mascotas 2023
+              &copy; Sitio desarrollado por PM-Planeta-Mascotas 2024
             </Text>
           </View>
         </View>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(5, 7, 12, 0.75)",
   },
   scrollView: {
-    backgroundColor: "transparent", // Asegúrate de que ScrollView no tenga su propio fondo
+    backgroundColor: "transparent",
   },
   mobileScreen: {
     marginHorizontal: 2,
@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: "cover",
   },
-  // ... otros estilos que ya tienes definidos ...
   categoryTitle: {
     fontSize: 18,
     fontWeight: "bold",
@@ -150,7 +149,6 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 10,
     marginBottom: 10,
-    // Estilos adicionales si son necesarios
   },
   irButton: {
     backgroundColor: "#ffa500",
@@ -167,13 +165,13 @@ const styles = StyleSheet.create({
   },
   petImage: {
     width: "90%",
-    height: 200, // Ajusta esto según tus necesidades
+    height: 200,
     resizeMode: "contain",
     marginTop: 20,
     marginLeft: 20,
   },
   facebookButton: {
-    backgroundColor: "#4267B2", // Color de Facebook
+    backgroundColor: "#4267B2",
     borderRadius: 50,
     width: 50,
     height: 50,
@@ -191,7 +189,6 @@ const styles = StyleSheet.create({
     padding: 20,
     height: 580,
   },
-  // ... footer y otros estilos que necesites ...
 });
 
 export default Producto;
